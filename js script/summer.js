@@ -30,3 +30,26 @@ for(const card of cards){
         document.getElementById('totalPrice').innerText = totalPrice.toFixed(2);
     })
 }
+
+const btn = document.getElementById('apply-btn');
+btn.addEventListener('click', function(){
+    // get the input field value
+    const inputField = document.getElementById('input-field');
+    const inputFieldText = inputField.value;
+    const inputFieldTextCode = inputFieldText.split(' ').join('').toUpperCase();
+    console.log(typeof inputFieldTextCode);
+    if(totalPrice >= 200){
+        if(inputFieldTextCode === 'SELL200'){
+            const discountElement = document.getElementById('discountPrice');
+            const totalDiscount = totalPrice * 0.2;
+            discountElement.innerText = totalDiscount.toFixed(2);
+        }
+        else{
+            alert('invalid code');
+        }
+    }
+    else{
+        alert('spent at list $200');
+    }
+    
+})
