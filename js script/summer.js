@@ -42,9 +42,16 @@ btn.addEventListener('click', function () {
         const discountElement = document.getElementById('discountPrice');
         const totalDiscount = totalPrice * 0.2;
         discountElement.innerText = totalDiscount.toFixed(2);
+        // after discount total cost price
+        const totalPrices = document.getElementById('total');
+        totalPrices.innerText = totalPrice - totalDiscount.toFixed(2);
+        document.getElementById('input-field').value = '';
     }
     else {
         alert('spent at list $200');
+        document.getElementById('input-field').value = '';
     }
 
 })
+
+// 38 min
